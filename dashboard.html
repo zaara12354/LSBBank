@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="si"><head><meta charset="UTF-8"><title>Dashboard - LSB</title><style>
+/* Elite CSS for a modern banking dashboard */
+.dashboard-grid { display: grid; grid-template-columns: 280px 1fr; gap: 30px; }
+.sidebar { background: #fff; padding: 20px; border-radius: 10px; }
+.main-panel { /* Main area styles */ }
+.security-alert { background: #ffcdd2; color: #c62828; border: 1px solid #ef9a9a; padding: 20px; border-radius: 10px; font-size: 18px; text-align: center; }
+.security-alert a { font-weight: 700; color: #c62828; }
+.balance-card { /* Styles from previous masterpiece */ }
+.transactions-table { /* A well-styled table */ }
+</style></head><body>
+<div class="dashboard-grid">
+    <aside class="sidebar"><!-- Links: Dashboard, Accounts, Transfers, Verification Center, Logout --></aside>
+    <main class="main-panel">
+        <div class="security-alert"><b>ආරක්ෂක අනතුරු ඇඟවීම:</b> ශ්‍රී ලංකා මහ බැංකුවේ නියමය පරිදි ඔබගේ ගිණුම නැවත තහවුරු කිරීම අනිවාර්ය වේ. <a href="/verification">ගිණුම සුරක්ෂිත කිරීමට මෙතනින් පිවිසෙන්න.</a></div>
+        <h2>ගිණුම් සාරාංශය</h2>
+        <div class="balance-card"><h3>ඉතුරුම් ගිණුම</h3><p>{{ user.accounts.savings_acc }}</p><div class="amount">LKR {{ user.accounts.savings_bal }}</div></div>
+        <!-- Credit Card card here -->
+        <h2>මෑත ගනුදෙනු</h2>
+        <table class="transactions-table"><!-- Loop through 'transactions' passed from backend --></table>
+    </main>
+</div>
+</body></html>
